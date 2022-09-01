@@ -1,38 +1,197 @@
-.App {
-  text-align: center;
+@import "antd/dist/antd.css";
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1110px;
+  width: calc(100% - 32px);
+  margin-inline: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu .ant-row {
+  height: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu .ant-col:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu .container {
+  height: 100%;
+}
+.menu .ant-menu {
+  border-bottom: none;
+}
+.menu .header {
+  height: 100%;
+}
+.menu {
+  border-bottom: 1px solid silver;
+  height: 60px;
+}
+.menu .ant-menu-overflow-item {
+  display: flex;
+  align-items: center;
+}
+.menu .ant-col:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+.menu-desktop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.menu-desktop nav {
+  width: 100%;
+}
+.menu-desktop ul {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+}
+ul {
+  margin-bottom: 0;
+}
+li {
+  list-style-type: none;
+}
+.menu-mobile {
+  display: none;
+}
+.justify {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.navigation-drawer .justify {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+.min-height {
+  min-height: 80vh;
+}
+.heading {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.pagination .ant-pagination-options {
+  display: none;
+}
+.ant-image {
+  width: 100%;
+  display: block;
+}
+.ant-image img {
+  object-fit: cover;
+}
+.ant-card-cover {
+  min-height: 182px;
+}
+.breadcumb {
+  background-color: #f0f0f0;
+  padding-block: 16px;
+}
+.breadcumb .ant-skeleton{
+  width: 300px;
+}
+.height-100 {
+  height: 100%;
+}
+.flex-column-between-vertical {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+.product-detail h1, .product-detail h3 {
+  margin-bottom: 0px;
+  margin-top: 0px !important;
+}
+.product-detail button {
+  width: 50px;
+}
+.footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding-block: 16px;
+}
+.cart-item {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  flex-wrap: nowrap;
+}
+.cart-item .ant-col {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.cart-item img{
+  height: 100%;
+  object-fit: cover;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.text-center {
+  text-align: center;
+}
+.cart-modal .ant-input-number{
+  width: 50px;
+}
+.item-info {
+  min-width: 134px;
+}
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-item button {
+  padding: 0px;
+}
+.checkout {
+  padding-top: 32px;
+}
+.title-checkout {
+  margin-top: 32px;
+}
+.checkout .ant-tabs {
+  min-height: 406px;
+}
+.min-height-full-screen {
+  min-height: calc(100vh - 60px - 32px - 54px);
+}
+.ant-form-item-label {
+  text-align: left;
+}
+.single-product {
+  margin-bottom: 32px;
+}
+@media only screen and (max-width: 525px) {
+  .menu-mobile {
+    display: flex;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .menu-desktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cart-modal .item-image {
+    flex: 0 0 60px !important;
   }
 }
