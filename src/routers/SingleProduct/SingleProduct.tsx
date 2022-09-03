@@ -16,6 +16,7 @@ import { productType } from "../Category/Category";
 import { categoryType } from "../../layouts/MainLayout/MainLayout";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/Cart/Slices";
+import { CATEGORY_PATH } from "../../constants/path";
 const { Title, Paragraph } = Typography;
 
 export default function SingleProduct() {
@@ -53,7 +54,9 @@ export default function SingleProduct() {
             <Breadcrumb>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>
-                <Link to={`/category/${category.id}`}>{category.name}</Link>
+                <Link to={`${CATEGORY_PATH}/${category.id}`}>
+                  {category.name}
+                </Link>
               </Breadcrumb.Item>
               <Breadcrumb.Item>
                 {product.title || "Product name"}

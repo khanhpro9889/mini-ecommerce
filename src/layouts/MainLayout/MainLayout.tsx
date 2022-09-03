@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "../Header";
 import Footer from "../Footer";
 import CartModal from "../../components/CartModal";
-import { cartType, closeModal, openModal } from "../../store/Cart/Slices";
+import { cartType, closeModal } from "../../store/Cart/Slices";
 export type categoryType = {
   id: number;
   name: string;

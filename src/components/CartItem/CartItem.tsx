@@ -31,7 +31,7 @@ export default function CartItem({
   return (
     <Row gutter={[8, 8]} className="cart-item">
       <Col flex="100px" className="item-image">
-        <img width="100%" src={cartItem.item.images[0]} />
+        <img alt="product" width="100%" src={cartItem.item.images[0]} />
       </Col>
       <Col flex="auto" className="item-info">
         <div className="text-overflow">

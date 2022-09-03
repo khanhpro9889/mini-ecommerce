@@ -1,5 +1,5 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Input, Row, Tabs } from "antd";
+import { Col, Row, Tabs } from "antd";
 import React from "react";
 import CartItemsDisplay from "../../components/CartItemsDisplay";
 import FormOrder from "../../components/FormOrder";

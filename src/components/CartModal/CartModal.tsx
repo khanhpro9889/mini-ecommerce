@@ -2,6 +2,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Button, Modal } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { CHECKOUT_PATH } from "../../constants/path";
 import { cartType, closeModal } from "../../store/Cart/Slices";
 import CartItemsDisplay from "../CartItemsDisplay";
 
@@ -18,7 +19,7 @@ export default function CartModal({ visible, close }: propsType) {
   );
   const handleOk = () => {
     dispatch(closeModal());
-    navigate("/checkout");
+    navigate(CHECKOUT_PATH);
   };
 
   const handleCancel = () => {

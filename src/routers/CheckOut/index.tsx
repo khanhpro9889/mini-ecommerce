@@ -1,6 +1,9 @@
+import { CHECKOUT_PATH } from "../../constants/path";
 import lazyLoading from "../../utils/router/lazyLoading";
 
-export default {
-  path: "/checkout",
+const page = {
+  path: CHECKOUT_PATH,
   page: lazyLoading(() => import("./CheckOut")),
 };
+
+export default page;

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { categoryType } from "../MainLayout/MainLayout";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../store/Cart/Slices";
+import { HOME_PATH } from "../../constants/path";
 
 type propsType = {
   categories: categoryType[];
@@ -28,7 +29,7 @@ export default function Header({ categories }: propsType) {
     <div className="container">
       <Row>
         <Col flex="70px">
-          <Link to="/">LOGO</Link>
+          <Link to={HOME_PATH}>LOGO</Link>
         </Col>
         <Col flex="auto">
           <div className="menu-desktop">

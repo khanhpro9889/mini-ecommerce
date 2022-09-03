@@ -1,10 +1,11 @@
 import { Col, message, Pagination, PaginationProps, Row } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { productType } from "../../routers/Category/Category";
 import ProductItem from "../ProductItem";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { addToCart } from "../../store/Cart/Slices";
 import { useDispatch } from "react-redux";
+import { CATEGORY_PATH_NO_ID, HOME_PATH } from "../../constants/path";
 
 type propsType = {
   loading: boolean;
@@ -24,6 +25,7 @@ export default function ProductDisplay({
   isCategory,
 }: propsType) {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [pageParams, setPageParams] = useSearchParams();
   const dispatch = useDispatch();
 
@@ -31,12 +33,12 @@ export default function ProductDisplay({
     setCurrentPage(current);
     if (isCategory) {
       return navigate({
-        pathname: `/category/${isCategory}`,
+        pathname: `${CATEGORY_PATH_NO_ID}/${isCategory}`,
         search: `?page=${current}`,
       });
     }
     navigate({
-      pathname: "/",
+      pathname: HOME_PATH,
       search: `?page=${current}`,
     });
   };
@@ -50,6 +52,7 @@ export default function ProductDisplay({
       pageInt = 1;
     }
     setCurrentPage(pageInt);
+    // eslint-disable-next-line
   }, []);
 
   const addToCartStore = (item: productType) => {

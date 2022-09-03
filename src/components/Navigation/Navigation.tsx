@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { categoryType } from "../../layouts/MainLayout/MainLayout";
 import { useSelector } from "react-redux";
 import { cartType } from "../../store/Cart/Slices";
+import { CATEGORY_PATH_NO_ID, HOME_PATH } from "../../constants/path";
 type propsType = {
   categories: categoryType[];
   open: () => void;
@@ -29,7 +30,9 @@ export default function Navigation({
     <Menu
       items={categories.map((item) => {
         return {
-          label: <Link to={`/category/${item.id}`}>{item.name}</Link>,
+          label: (
+            <Link to={`${CATEGORY_PATH_NO_ID}/${item.id}`}>{item.name}</Link>
+          ),
           key: item.id,
         };
       })}
@@ -40,7 +43,7 @@ export default function Navigation({
       <ul>
         <Space size="large" className="justify">
           <li>
-            <Link to="/">
+            <Link to={HOME_PATH}>
               <Space>
                 <HomeOutlined />
                 Home
@@ -57,7 +60,7 @@ export default function Navigation({
           </li>
           <li>
             <Dropdown overlay={menu} trigger={["click"]}>
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href="/" onClick={(e) => e.preventDefault()}>
                 <Space>
                   <AppstoreOutlined />
                   Categories

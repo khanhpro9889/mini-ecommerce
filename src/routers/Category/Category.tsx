@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Typography, message } from "antd";
+import { Typography } from "antd";
 import { categoryType } from "../../layouts/MainLayout/MainLayout";
 import ProductDisplay from "../../components/ProductsDisplay";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/Cart/Slices";
 const { Title } = Typography;
 
 export type productType = {
@@ -51,10 +49,12 @@ export default function Category() {
 
   useEffect(() => {
     getSingleCategory();
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => {
     getProductsByCategory(currentPage);
+    // eslint-disable-next-line
   }, [currentPage, id]);
 
   return (

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Typography, message } from "antd";
+import { Typography } from "antd";
 import { categoryType } from "../../layouts/MainLayout/MainLayout";
 import ProductDisplay from "../../components/ProductsDisplay";
-import { addToCart } from "../../store/Cart/Slices";
 const { Title } = Typography;
 
 export type productType = {
