@@ -2,6 +2,7 @@ import { DeleteOutlined } from "@ant-design/icons";
 import { Button, Col, InputNumber, message, Popconfirm, Row } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import { SINGLE_PATH_NO_ID } from "../../constants/path";
 import { productType } from "../../routers/Home/Home";
 import { itemCartType } from "../../store/Cart/Slices";
 
@@ -35,7 +36,7 @@ export default function CartItem({
       </Col>
       <Col flex="auto" className="item-info">
         <div className="text-overflow">
-          <Link to={`/product/${cartItem.item.id}`}>
+          <Link to={`${SINGLE_PATH_NO_ID}/${cartItem.item.id}`}>
             <strong>{cartItem.item.title}</strong>
           </Link>
         </div>
