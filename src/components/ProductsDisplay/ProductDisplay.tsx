@@ -6,6 +6,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { addToCart } from "../../store/Cart/Slices";
 import { useDispatch } from "react-redux";
 import { CATEGORY_PATH_NO_ID, HOME_PATH } from "../../constants/path";
+import { useAppDispatch } from "../../utils/hooks/useAppDispatch";
+import { getAllUsers } from "../../store/Users/Slices";
 
 type propsType = {
   loading: boolean;
@@ -28,6 +30,7 @@ export default function ProductDisplay({
   // eslint-disable-next-line
   const [pageParams, setPageParams] = useSearchParams();
   const dispatch = useDispatch();
+  const appDispatch = useAppDispatch();
 
   const onChangePage: PaginationProps["onChange"] = (current, pageSize) => {
     setCurrentPage(current);
@@ -52,6 +55,7 @@ export default function ProductDisplay({
       pageInt = 1;
     }
     setCurrentPage(pageInt);
+    appDispatch(getAllUsers());
     // eslint-disable-next-line
   }, []);
 

@@ -41,7 +41,7 @@ export default function Navigation({
   return (
     <nav>
       <ul>
-        <Space size="large" className="justify">
+        <Space size={10} className="justify">
           <li>
             <Link to={HOME_PATH}>
               <Space>

@@ -112,9 +112,6 @@ export const cartSlice = createSlice({
       };
     },
   },
-  extraReducers: {
-    // add your async reducers here
-  },
 });
 // Action creators
 export const {
@@ -126,4 +123,5 @@ export const {
   closeModal,
   addQuantity,
 } = cartSlice.actions;
+
 export default cartSlice.reducer;

@@ -16,7 +16,7 @@ import { productType } from "../Category/Category";
 import { categoryType } from "../../layouts/MainLayout/MainLayout";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/Cart/Slices";
-import { CATEGORY_PATH } from "../../constants/path";
+import { CATEGORY_PATH_NO_ID } from "../../constants/path";
 const { Title, Paragraph } = Typography;
 
 export default function SingleProduct() {
@@ -54,7 +54,7 @@ export default function SingleProduct() {
             <Breadcrumb>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>
-                <Link to={`${CATEGORY_PATH}/${category.id}`}>
+                <Link to={`${CATEGORY_PATH_NO_ID}/${category.id}`}>
                   {category.name}
                 </Link>
               </Breadcrumb.Item>
@@ -68,7 +68,7 @@ export default function SingleProduct() {
       <div className="container single-product">
         <Row gutter={32}>
           <Col sm={12} xs={24}>
-            <Carousel>
+            <Carousel autoplay>
               {product.images &&
                 product.images.map((item) => {
                   return (

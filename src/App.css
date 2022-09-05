@@ -179,6 +179,10 @@ li {
 }
 .single-product {
   margin-bottom: 32px;
+  min-height: calc(100vh - 102px - 60px - 32px - 54px);
+}
+.not-found {
+  min-height: calc(100vh - 60px - 54px);
 }
 @media only screen and (max-width: 525px) {
   .menu-mobile {
